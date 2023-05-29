@@ -1,10 +1,10 @@
 # PEP2_Tingeso_1-2023
 Microservicios
 ## TO DO:
-  [ ] HU1: Ingreso de datos de los proveedores desde pantalla.
-  [ ] HU2: Importar acopio de leche desde el archivo Excel.
-  [ ] HU3: Importar valores de Grasa y Solidos Totales desde archivo Excel.
-  [ ] HU4: Calcular planilla de pagos de leche y mostrar reporte por pantalla de la planilla.
+ - [ ] HU1: Ingreso de datos de los proveedores desde pantalla.
+ - [ ] HU2: Importar acopio de leche desde el archivo Excel.
+ - [ ] HU3: Importar valores de Grasa y Solidos Totales desde archivo Excel.
+ - [ ] HU4: Calcular planilla de pagos de leche y mostrar reporte por pantalla de la planilla.
   
 ## Requerimientos
 ### FrontEnd
