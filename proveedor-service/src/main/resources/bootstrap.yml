@@ -1,9 +1,9 @@
 spring:
-  application:
-    name: proveedor-service
   devtools:
     restart:
       aditional-paths: src/main/java
+  application:
+    name: proveedor-service
   cloud:
     config:
       enabled: true
