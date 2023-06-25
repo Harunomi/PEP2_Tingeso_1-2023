@@ -26,9 +26,8 @@ public class AcopioController {
     }
 
     @PostMapping
-    public void cargarA(@RequestParam("acopio")MultipartFile file, RedirectAttributes ms){
+    public void cargarA(@RequestParam("file")MultipartFile file, RedirectAttributes ms){
         acopioService.save(file);
-        ms.addFlashAttribute("mensaje1","Acopio cargado correctamente");
     }
 
     @PostMapping("/borrarTodo")

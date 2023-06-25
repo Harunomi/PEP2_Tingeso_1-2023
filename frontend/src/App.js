@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import HomeComponent from './components/HomeComponent';
+import CrearProveedorComponent from './components/CrearProveedorComponent';
+import HeaderComponent from './components/HeaderComponent';
+import ListaProveedorComponent from './components/ListaProveedoresComponent';
+import SubirArchivoAComponent from './components/SubirArchivoAComponent';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <HeaderComponent /> 
+      <Router>
+        <div className="container">
+          <Switch>
+            <Route exact path="/" component={HomeComponent}></Route>
+            <Route exact path="/crear-proveedor" component={CrearProveedorComponent}></Route>
+            <Route exact path="/proveedores" component={ListaProveedorComponent}></Route>
+            <Route exact path="/subirArchivoA" component={SubirArchivoAComponent}></Route>
+          </Switch>
+        </div>
+      </Router>
+      <ToastContainer />
     </div>
   );
 }

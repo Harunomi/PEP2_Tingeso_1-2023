@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
+/* Estilos para el modo oscuro */
+body {
+  background-color: #121212 !important;
+  color: #FFFFFF;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  color: #FFFFFF !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Estilos para los enlaces visitados */
+a:visited {
+  color: #BBBBBB;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Estilos para los encabezados */
+h1, h2, h3, h4, h5, h6,label {
+  color: #FFFFFF !important;
 }
 
-.App-link {
-  color: #61dafb;
+/* Estilos para los botones */
+button, input[type="submit"] {
+  background-color: #333333;
+  color: #FFFFFF !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Estilos para los inputs */
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], textarea {
+  background-color: #1E1E1E;
+  color: #FFFFFF !important;
+  border-color: #555555;
+}
+
+/* Estilos para los placeholders de los inputs */
+::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+:-moz-placeholder {
+  color: #AAAAAA;
+}
+
+::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+:-ms-input-placeholder {
+  color: #AAAAAA;
 }
