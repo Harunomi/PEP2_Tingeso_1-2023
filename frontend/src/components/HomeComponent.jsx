@@ -1,10 +1,23 @@
 import React, { Component } from 'react'
+import AcopioService from '../services/AcopioService';
+import GrasaSolidoService from '../services/GrasaSolidoService';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 class HomeComponent extends Component {
     constructor(props) {
         super(props)
         this.state = {
 
         }
+    }
+    vaciarAcopio(){
+        AcopioService.borrarTodo();
+        toast.success("Lista de acopio eliminada.");
+    }
+
+    vaciarGrasaSolido(){
+        GrasaSolidoService.borrarTodo();
+        toast.success("Lista de grasa y solidos eliminada.");
     }
 
     render() {
@@ -15,17 +28,17 @@ class HomeComponent extends Component {
                         <tr>
                             <td><p>Cargar archivos de Acopio (en formato .csv)</p></td>
                             <td>
-                                <a class="btn btn-primary" href="/subirArchivoA" role="button">Subir Archivo</a>
-                                <a class="btn btn-danger" href="/vaciarAcopio" role="button">Vaciar base de datos</a>
-                                <a class="btn btn-primary" href="/listaAcopio" role="button">Ver Acopio</a>
+                                <a class="btn btn-primary" href="/subir-archivo-acopio" role="button">Subir Archivo</a>
+                                <a class="btn btn-danger" onClick={this.vaciarAcopio} role="button">Vaciar base de datos</a>
+                                <a class="btn btn-primary" href="/ver-acopio" role="button">Ver Acopio</a>
                             </td>
                         </tr>
                         <tr>
                             <td><p>Cargar Archivo de Grasas y Solidos (en formato .csv)</p></td>
                             <td>
-                                <a class="btn btn-primary" href="/subirArchivoG" role="button">Subir Archivo</a>
-                                <a class="btn btn-danger" href="/vaciarGrasaSolido" role="button">Vaciar base de datos</a>
-                                <a class="btn btn-primary" href="/listaGrasaSolido" role="button">Ver lista de Grasas y Solidos</a>
+                                <a class="btn btn-primary" href="/subir-grasa-solido" role="button">Subir Archivo</a>
+                                <a class="btn btn-danger" onClick={this.vaciarGrasaSolido} role="button">Vaciar base de datos</a>
+                                <a class="btn btn-primary" href="/ver-grasa-solido" role="button">Ver lista de Grasas y Solidos</a>
                             </td>
                         </tr>
                         <tr>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import ProveedorService from '../services/ProveedorService';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class HeaderComponent extends Component {
     constructor (props){
@@ -11,6 +13,7 @@ class HeaderComponent extends Component {
     }
     borrarTodo(){
         ProveedorService.borrarTodo();
+        toast.success("Proveedores eliminados correctamente.")
     }
     
     render(){

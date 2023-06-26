@@ -1,46 +1,46 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
-import AcopioService from "../services/AcopioService";
+import GrasaSolidoService from '../services/GrasaSolidoService'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-class SubirArchivoAComponent extends Component {
-    constructor(props) {
+class SubirArchivoGComponent extends Component{
+    constructor(props){
         super(props);
         this.state = {
             file: null,
         };
+
         this.onFileChange = this.onFileChange.bind(this);
     }
 
-    onFileChange(event) {
-        this.setState({ file: event.target.files[0] });
+    onFileChange(event){
+        this.setState({file: event.target.files[0]});
     }
 
     onFileUpload = () => {
-        if (this.state.file) {  // Verificar si se ha seleccionado un archivo
+        if (this.state.file){
             const formData = new FormData();
-            formData.append("file", this.state.file);
+            formData.append("file",this.state.file);
 
-            AcopioService.subirArchivo(formData)
-                .then((res) => {
-                    this.props.history.push("/");
-                    toast.success("Archivo Subido.");
-                });
-        } else {
-            toast.error("Seleccione un archivo antes de cargarlo.");  
+            GrasaSolidoService.subirGrasaSolido(formData)
+            .then((res) => {
+                this.props.history.push("/");
+                toast.success("Archivo Subido.");
+            });
+        }else{
+            toast.error("Seleccione un archivo antes de cargarlo.");
         }
     }
 
-    render() {
+    render(){
         return (
-            <div className="f">
+            <div className= "f">
                 <div className="container">
-                    <h1><b>Cargar el archivo de datos</b></h1>
+                <h1><b>Cargar el archivo de datos</b></h1>
                     <Row className="mt-4">
                         <Col col="12">
                             <Form.Group className="mb-3" controlId="formFileLg">
@@ -53,11 +53,8 @@ class SubirArchivoAComponent extends Component {
                     </Row>
                 </div>
             </div>
-        );
+        )
     }
+    
 }
-
-export default withRouter(SubirArchivoAComponent);
-
-
-
+export default withRouter(SubirArchivoGComponent);

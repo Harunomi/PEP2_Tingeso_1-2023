@@ -26,7 +26,7 @@ public class GrasaSolidoController {
     }
 
     @PostMapping
-    public void cargarG(@RequestParam("grasasolido")MultipartFile file, RedirectAttributes ms){
+    public void cargarG(@RequestParam("file")MultipartFile file, RedirectAttributes ms){
         grasaSolidoService.save(file);
         ms.addFlashAttribute("mensaje2","Archivo grasa solidos cargado correctamente");
     }
