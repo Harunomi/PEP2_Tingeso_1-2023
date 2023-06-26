@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class  PlanillaService {
+public class   PlanillaService {
     @Autowired
     private PlanillaRepository planillaRepository;
 
@@ -128,7 +128,7 @@ public class  PlanillaService {
                 planillaActual.setTotalDias(totalDiasLeche(proveedores.get(i).getCodigo(),quincenaActual));
                 float KLSactual = totalKLS(proveedores.get(i).getCodigo(),quincenaActual,ultimoIndice);
                 planillaActual.setTotalKLS(KLSactual);
-                planillaActual.setPromedioDiarioKLS(KLSactual/planillaActual.getTotalDias());
+                planillaActual.setPromedioDiarioKLS(promedioDiarioKLS(KLSactual,planillaActual.getTotalDias()));
                 float grasaActual = obtenerGrasa(grasaSolido,proveedores.get(i).getCodigo());
                 float solidoActual = obtenerST(grasaSolido,proveedores.get(i).getCodigo());
                 planillaActual.setPorcentajeGrasa(grasaActual);
@@ -149,6 +149,7 @@ public class  PlanillaService {
                 planillaActual.setMontoRetencion(calcularMontoRetencion(planillaActual.getPagoTotal(),proveedores.get(i).getRetencion()));
                 planillaActual.setMontoFinal(planillaActual.getPagoTotal() - planillaActual.getMontoRetencion());
                 planillas.add(planillaActual);
+                //System.out.println(planillaActual);
                 planillaRepository.save(planillaActual);
                 // se repite el proceso para cada proveedor en la misma quincena
 
@@ -159,6 +160,13 @@ public class  PlanillaService {
 
         }
 
+    }
+    public float promedioDiarioKLS(float klsActual,float totalDias){
+        if (totalDias == 0){
+            return 0;
+        }else{
+            return klsActual/totalDias;
+        }
     }
 
     public String setQuincenaString(String fecha){

@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 const URL = "http://localhost:8080/planilla";
 class PlanillaService{
@@ -12,7 +12,7 @@ class PlanillaService{
     }
 
     borrarTodo(){
-         return axios.post(URL + "/borrarTodo");
+        return axios.post(URL + "/borrarTodo");
     }
 }
 
