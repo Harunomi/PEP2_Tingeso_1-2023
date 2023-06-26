@@ -20,7 +20,7 @@ class ListaAcopioComponent extends Component {
         return (
             <div className="container-sm">
                 {acopio.length === 0 ? (
-                    <div className="alert alert-info">No hay proveedores disponibles.</div>
+                    <div className="alert alert-info">No hay una lista de acopio disponible.</div>
                 ) : (
                     <table className="table table-dark table-striped table-bordered">
                         <thead className="thead-light">

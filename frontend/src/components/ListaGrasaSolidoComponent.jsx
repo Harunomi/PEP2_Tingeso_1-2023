@@ -21,7 +21,7 @@ class ListaGrasaSolidoComponent extends Component {
         return (
             <div className='container-sm'>
                 {grasaSolido.length === 0 ? (
-                    <div className="alert alert-info">No hay proveedores disponibles.</div>
+                    <div className="alert alert-info">No hay lista de grasas y solidos disponible.</div>
                 ) : (
                     <table className="table table-dark table-striped table-bordered">
                         <thead className="thead-light">
