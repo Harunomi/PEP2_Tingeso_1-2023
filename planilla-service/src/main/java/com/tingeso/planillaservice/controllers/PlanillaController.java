@@ -26,6 +26,10 @@ public class PlanillaController {
         return ResponseEntity.ok(planilla);
 
     }
+    @GetMapping("/calcular")
+    public void calcularPlanilla(){
+        planillaService.calcularQuincenas();
+    }
 
     @PostMapping("/borrarTodo")
     public void borrarTodo(){

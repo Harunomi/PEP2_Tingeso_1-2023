@@ -3,6 +3,7 @@ import AcopioService from '../services/AcopioService';
 import GrasaSolidoService from '../services/GrasaSolidoService';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PlanillaService from '../services/PlanillaService';
 class HomeComponent extends Component {
     constructor(props) {
         super(props)
@@ -18,6 +19,16 @@ class HomeComponent extends Component {
     vaciarGrasaSolido(){
         GrasaSolidoService.borrarTodo();
         toast.success("Lista de grasa y solidos eliminada.");
+    }
+
+    calcularPlanilla(){
+        PlanillaService.calcularPlanilla();
+        toast.success("Planilla calculada.");
+    }
+
+    vaciarPlanilla(){
+        PlanillaService.borrarTodo();
+        toast.success("Planilla borrada.");
     }
 
     render() {
@@ -44,9 +55,9 @@ class HomeComponent extends Component {
                         <tr>
                             <td><p>Calcular planilla de pagos de leche.</p></td>
                             <td>
-                                <a class="btn btn-primary" href="/calcularPlanilla" role="button">Calcular planilla</a>
-                                <a class="btn btn-danger" href="/vaciarPlanilla" role="button">Vaciar base de datos</a>
-                                <a class="btn btn-primary" href="/listaPlanilla" role="button">Reporte de la planilla</a>
+                                <a class="btn btn-primary" onClick={this.calcularPlanilla} role="button">Calcular planilla</a>
+                                <a class="btn btn-danger" onClick={this.vaciarPlanilla} role="button">Vaciar base de datos</a>
+                                <a class="btn btn-primary" href="/ver-planilla" role="button">Reporte de la planilla</a>
                             </td>
                         </tr>
                     </tbody>

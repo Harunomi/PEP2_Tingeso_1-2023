@@ -11,7 +11,7 @@ import SubirArchivoAComponent from './components/SubirArchivoAComponent';
 import ListaAcopioComponent from './components/ListaAcopioComponent';
 import SubirArchivoGComponent from './components/SubirArchivoGComponent';
 import ListaGrasaSolidoComponent from './components/ListaGrasaSolidoComponent';
-
+import ListaPlanillaComponent from './components/ListaPlanillaComponent';
 
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
             <Route exact path="/ver-acopio" component={ListaAcopioComponent}></Route>
             <Route exact path="/subir-grasa-solido" component={SubirArchivoGComponent}></Route>
             <Route exact path="/ver-grasa-solido" component={ListaGrasaSolidoComponent}></Route>
+            <Route exact path="/ver-planilla" component={ListaPlanillaComponent}></Route>
           </Switch>
         </div>
       </Router>

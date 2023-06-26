@@ -6,6 +6,9 @@ import com.tingeso.planillaservice.models.GrasaSolidoModel;
 import com.tingeso.planillaservice.models.ProveedorModel;
 import com.tingeso.planillaservice.repositories.PlanillaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,27 +16,45 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class PlanillaService {
+public class  PlanillaService {
     @Autowired
     private PlanillaRepository planillaRepository;
 
     @Autowired
     RestTemplate restTemplate;
 
-    public List<AcopioModel> obtenerAcopio(){
-        List<AcopioModel> retorno = restTemplate.getForObject("http://acopio-service/acopio",List.class);
+    public List<AcopioModel> obtenerAcopio() {
+        ResponseEntity<List<AcopioModel>> response = restTemplate.exchange(
+                "http://acopio-service/acopio",
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<List<AcopioModel>>() {}
+        );
+        List<AcopioModel> retorno = response.getBody();
         System.out.println(retorno);
         return retorno;
     }
 
-    public List<GrasaSolidoModel> obtenerGrasaSolido(){
-        List<GrasaSolidoModel> retorno = restTemplate.getForObject("http://grasasolido-service/grasasolido",List.class);
+    public List<GrasaSolidoModel> obtenerGrasaSolido() {
+        ResponseEntity<List<GrasaSolidoModel>> response = restTemplate.exchange(
+                "http://grasasolido-service/grasasolido",
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<List<GrasaSolidoModel>>() {}
+        );
+        List<GrasaSolidoModel> retorno = response.getBody();
         System.out.println(retorno);
         return retorno;
     }
 
-    public List<ProveedorModel> obtenerProveedores(){
-        List<ProveedorModel> retorno = restTemplate.getForObject("http://proveedor-service/proveedor",List.class);
+    public List<ProveedorModel> obtenerProveedores() {
+        ResponseEntity<List<ProveedorModel>> response = restTemplate.exchange(
+                "http://proveedor-service/proveedor",
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<List<ProveedorModel>>() {}
+        );
+        List<ProveedorModel> retorno = response.getBody();
         System.out.println(retorno);
         return retorno;
     }

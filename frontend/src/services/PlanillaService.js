@@ -7,8 +7,8 @@ class PlanillaService{
         return axios.get(URL);
     }
 
-    subirPlanilla(file){
-        return axios.post(URL,file);
+    calcularPlanilla(){
+        return axios.get(URL + "/calcular");
     }
 
     borrarTodo(){
