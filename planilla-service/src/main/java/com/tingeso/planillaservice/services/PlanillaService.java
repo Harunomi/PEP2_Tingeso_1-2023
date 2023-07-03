@@ -31,7 +31,6 @@ public class   PlanillaService {
                 new ParameterizedTypeReference<List<AcopioModel>>() {}
         );
         List<AcopioModel> retorno = response.getBody();
-        System.out.println(retorno);
         return retorno;
     }
 
@@ -43,7 +42,6 @@ public class   PlanillaService {
                 new ParameterizedTypeReference<List<GrasaSolidoModel>>() {}
         );
         List<GrasaSolidoModel> retorno = response.getBody();
-        System.out.println(retorno);
         return retorno;
     }
 
@@ -55,7 +53,6 @@ public class   PlanillaService {
                 new ParameterizedTypeReference<List<ProveedorModel>>() {}
         );
         List<ProveedorModel> retorno = response.getBody();
-        System.out.println(retorno);
         return retorno;
     }
 
