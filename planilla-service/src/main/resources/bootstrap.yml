@@ -21,6 +21,6 @@ spring:
       ddl-auto: create
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/${DB_HOST}?${DB_NAME}=true&allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://${DB_HOST}/${DB_NAME}?autorReconnect=true&allowPublicKeyRetrieval=true&useSSL=false
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
