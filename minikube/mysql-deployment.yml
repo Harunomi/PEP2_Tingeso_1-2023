@@ -34,15 +34,15 @@ spec:
             configMapKeyRef:
               name: acopio
               key: name
-        - name: MYSQL_DATABASE_PLANILLA
-          valueFrom:
-            configMapKeyRef:
-              name: planilla
-              key: name
         - name: MYSQL_DATABASE_GRASASOLIDO
           valueFrom:
             configMapKeyRef:
               name: grasasolido
+              key: name
+        - name: MYSQL_DATABASE_PLANILLA
+          valueFrom:
+            configMapKeyRef:
+              name: planilla
               key: name
         ports:
         - containerPort: 3306

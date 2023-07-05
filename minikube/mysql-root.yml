@@ -4,5 +4,5 @@ metadata:
   name: mysql-root-credentials
 type: Opaque
 data:
-  username: YWRtaW4gDQo=
-  password: YWRtaW4gDQo=
+  username: cm9vdA0K
+  password: cm9vdA0K
